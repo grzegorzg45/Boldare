@@ -28,7 +28,11 @@ public class Main {
             for (int v = value; v>0 ;v--)
                if (v <= quantity[i])
             {
-                System.out.println("Wydaj " + v + " monet " + (nominal[i] / 100.0) + " zł");
+                if(nominal[i]>=100)
+                System.out.println("Wydaj " + v + " monet " + (nominal[i] / 100) + " zł");
+                else
+                    System.out.println("Wydaj " + v + " monet " + (nominal[i]) + " gr");
+
                 changeGr -= v * nominal[i];
                 quantity[i] -= v;
                 break;
